@@ -22,6 +22,8 @@ Layer 7 load balancing:
 - It can make a load‑balancing decision based on the content of the message (the URL or cookie, for example). 
 - It then makes a new TCP connection to the selected upstream server (or reuses an existing one, by means of HTTP keepalives) and writes the request to the server.
 - Layer 7 load balancing is more CPU‑intensive than packet‑based Layer 4 load balancing
+- Layer 7 load balancers base their routing decisions on various characteristics of the HTTP header and on the actual contents of the message, such as the URL, the type of data (text, video, graphics), or information in a cookie.
+- Modern general-purpose load balancers, such as NGINX Plus and the open source NGINX software, generally operate at Layer 7 and serve as full reverse proxies. Rather than manage traffic on a packet-by-packet basis like Layer 4 load balancers that use NAT, Layer 7 load balancing proxies can read requests and responses in their entirety. They manage and manipulate traffic based on a full understanding of the transaction between the client and the application server.
 
 ## Load Balancing Algorithms
 
